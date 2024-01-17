@@ -1,0 +1,348 @@
+{
+	"info": {
+		"_postman_id": "fa6fe312-6633-48f5-ac20-305b584375c5",
+		"name": "Testing Exercises SFM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Request Positive Test Case (SFM)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bafa29c8-2428-4d72-9386-a7eeac708c0d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "37090efa-d6e1-48a7-b014-9c1955a6b669",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request Positive With Name Test Case (SFM)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8e28f965-4cda-4ec5-a3b0-f73527c932af",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Check if user with id1 is Leanne Graham\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+							"});\r",
+							"pm.test(\"Check if user with id2 is Ervin Howell\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].name).to.eql(\"Ervin Howell\");\r",
+							"});\r",
+							"pm.test(\"Check if user with id3 is Karina\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].name).to.eql(\"MJF\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b376709b-cf27-4b55-b0c9-4d5ce412b015",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request Negative Test Case (SFM)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1719144-b086-41bf-a518-b78279f82f25",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "08aa56d9-2445-4567-8307-b8ee88158f77",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/usersz"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Request Positive Test Case (SFM)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ea1483d-a506-485c-9827-223109cc2f47",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "32d36365-e453-44b4-9ea8-b9c2ac87e6bc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"Rajkumar SM\",\r\n    \"username\": \"stm\",\r\n    \"email\": \"raj@softwaretestingmaterial.com\",\r\n    \"address\": {\r\n      \"street\": \"X Roads\",\r\n      \"suite\": \"Apt. 007\",\r\n      \"city\": \"Hyderabad\",\r\n      \"zipcode\": \"600007\",\r\n      \"geo\": {\r\n        \"lat\": \"10.0000\",\r\n        \"lng\": \"80.0000\"\r\n      }\r\n    },\r\n    \"phone\": \"1-2345-6-7890\",\r\n    \"website\": \"softwaretestingmaterial.com\",\r\n    \"company\": {\r\n      \"name\": \"Software Testing Material\",\r\n      \"catchPhrase\": \"A blog for Software Testers\",\r\n      \"bs\": \"real-time tutorials\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://jsonplaceholder.typicode.com/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Request Negative Test Case (SFM)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "290799ff-e6ac-4b74-96e6-0ac0062508a4",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c9f97269-8f99-4593-bc57-5cb635591949",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 11,\r\n    \"name\": \"Rajkumar SM\",\r\n    \"username\": \"stm\",\r\n    \"email\": \"raj@softwaretestingmaterial.com\",\r\n    \"address\": {\r\n      \"street\": \"X Roads\",\r\n      \"suite\": \"Apt. 007\",\r\n      \"city\": \"Hyderabad\",\r\n      \"zipcode\": \"600007\",\r\n      \"geo\": {\r\n        \"lat\": \"10.0000\",\r\n        \"lng\": \"80.0000\"\r\n      }\r\n    },\r\n    \"phone\": \"1-2345-6-7890\",\r\n    \"website\": \"softwaretestingmaterial.com\",\r\n    \"company\": {\r\n      \"name\": \"Software Testing Material\",\r\n      \"catchPhrase\": \"A blog for Software Testers\",\r\n      \"bs\": \"real-time tutorials\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://jsonplaceholder.typicode.com/userszzzzzz"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request By Using Parameter Positive Test Case (SFM)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "33b2a0ad-ac9b-490c-a234-67ca106b22dc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ab045b0a-0b4d-4300-af43-c879286f7366",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request By Using Parameter Negative Test Case (SFM)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "26d8f6a6-beb8-4010-bab7-e37a4d5ecf63",
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "80f64892-c353-49ad-971c-2d77147c8ea0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/usersx"
+			},
+			"response": []
+		},
+		{
+			"name": "imgur Oauth 2.0 Authorization",
+			"id": "be10e5fb-acec-4d83-9e7a-d22950c99428",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"addTokenTo": "queryParams"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://api.imgur.com/3/account/me/images"
+			},
+			"response": []
+		},
+		{
+			"name": "Extracting Data From Responses and Chaining Requests Part 1",
+			"id": "1ab3c91b-b258-47fb-a3b2-2b8a4621713c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "httpbin.org/uuid"
+			},
+			"response": []
+		},
+		{
+			"name": "Extracting Data From Responses and Chaining Requests Part 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6257f29a-09fa-4279-acdc-ed4e9f62989f",
+						"exec": [
+							"// access the response body\r",
+							"const response = pm.response.json();\r",
+							"\r",
+							"//Saved as a global variable. Other requests can access this info as well.\r",
+							"pm.globals.set(\"orderId\", response.uuid);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ac46a8e0-8435-41ec-a3ec-af83679e0235",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n\"orderId\": \"{{orderId}}\",\r\n\"products\": [\r\n                {\r\n                        \"quantity\": 20,\r\n   \"productId\": 3000\r\n  },\r\n  {\r\n   \"quantity\": 10,\r\n   \"productId\": 2000\r\n  }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "httpbin.org/post"
+			},
+			"response": []
+		},
+		{
+			"name": "Data-Driven Testing in Postman",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8edfb6ea-c801-4540-ab08-69b00cee7dad",
+						"exec": [
+							"pm.test(\"Status code is 201\" , function(){\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"var em = pm.variables.get(\"email\");\r",
+							"var pwd = pm.variables.get(\"password\");\r",
+							"\r",
+							"pm.test(\"Check email \" +em, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.email).to.eql(em);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check password \" +pwd, function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.password).to.eql(pwd);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "40c417e6-a0a4-4acb-98cb-5ce04b56f113",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://reqres.in/api/register/prepod"
+			},
+			"response": []
+		}
+	]
+}
